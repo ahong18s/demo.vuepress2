@@ -1,0 +1,16 @@
+{
+  "name": "demo.vuepress2",
+  "version": "1.0.0",
+  "description": "a demo website for Vuepress",
+  "main": "index.js",
+  "repository": "https://gitee.com/ahong18s/demo.vuepress2",
+  "author": "ahong18s <2568763791@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.67"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  }
+}
