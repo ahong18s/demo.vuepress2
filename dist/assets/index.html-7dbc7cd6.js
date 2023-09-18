@@ -1,0 +1,1 @@
+const o=JSON.parse(`{"key":"v-0a330152","path":"/en-US/advanced/cookbook/","title":"Introduction","lang":"en-US","frontmatter":{},"headers":[{"level":2,"title":"What's the Cookbook for?","slug":"what-s-the-cookbook-for","link":"#what-s-the-cookbook-for","children":[]}],"git":{},"filePathRelative":"en-US/advanced/cookbook/README.md"}`);export{o as data};
