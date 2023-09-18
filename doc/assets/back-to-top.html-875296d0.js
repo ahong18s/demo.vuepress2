@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-6474e88f","path":"/reference/plugin/back-to-top.html","title":"back-to-top","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"使用方法","slug":"使用方法","link":"#使用方法","children":[]},{"level":2,"title":"样式","slug":"样式","link":"#样式","children":[]}],"git":{},"filePathRelative":"reference/plugin/back-to-top.md"}');export{e as data};
