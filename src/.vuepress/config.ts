@@ -1,4 +1,6 @@
 import {defineUserConfig, defaultTheme} from 'vuepress';
+import {registerComponentsPlugin} from '@vuepress/plugin-register-components';
+import {resolve} from 'path';
 // 引入配置
 import {navbarZh, navbarEn,} from './config/navbar/index';
 import {sidebarZh, sidebarEn,} from './config/sidebar/index';
@@ -119,5 +121,12 @@ export default defineUserConfig({
                 toggleSidebar: 'Switch Sidebar',
             },
         },
-    })
+    }),
+    plugins: [
+        registerComponentsPlugin({
+            components: {
+                NpmBadge: resolve(__dirname, './components/NpmBadge.vue'),
+            },
+        }),
+    ],
 });

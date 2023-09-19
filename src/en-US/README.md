@@ -78,3 +78,30 @@ npx vuepress build
 
   </CodeGroupItem>
 </CodeGroup>
+
+### Problem Record
+
+- 1.Some plugins or files are missing under @vuePress in node_modules, resulting in failure when importing some files—— Unresolved（ ×）
+  ```shell
+  ⠙ Initializing and preparing dataerror Import file @vuepress/theme-default/src/client/styles/_variables.scss not found
+  error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
+  error Import file @vuepress/theme-default/src/client/styles/vars-dark.scss not found
+  error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-medium-zoom/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-nprogress/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-search/src/shared/hotKey.ts not found
+  error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
+  error Import file @vuepress/theme-default/src/client/styles/_variables.scss not found
+  error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
+  error Import file @vuepress/theme-default/src/client/styles/vars-dark.scss not found
+  error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
+  ⠙ Initializing and preparing dataerror Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-medium-zoom/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-nprogress/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-search/src/shared/hotKey.ts not found
+  error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
+  ```
+- 2.When customizing components, use 'import. meta' to report errors, or use other methods to define dirname - resolved (√)

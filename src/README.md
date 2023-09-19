@@ -20,7 +20,6 @@ features:
 footer: MIT Licensed | Copyright © 2023-present ahong18s
 ---
 
-
 ### 在项目中集成
 
 <CodeGroup>
@@ -78,3 +77,30 @@ npx vuepress build
 
   </CodeGroupItem>
 </CodeGroup>
+
+### 问题记录
+
+- 1.node_modules 中 @vuepress 下缺少部分插件或文件，导致引入一些文件时失败。——未解决（×）
+  ```shell
+  ⠙ Initializing and preparing dataerror Import file @vuepress/theme-default/src/client/styles/_variables.scss not found
+  error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
+  error Import file @vuepress/theme-default/src/client/styles/vars-dark.scss not found
+  error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-medium-zoom/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-nprogress/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-search/src/shared/hotKey.ts not found
+  error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
+  error Import file @vuepress/theme-default/src/client/styles/_variables.scss not found
+  error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
+  error Import file @vuepress/theme-default/src/client/styles/vars-dark.scss not found
+  error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
+  ⠙ Initializing and preparing dataerror Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-medium-zoom/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-nprogress/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-search/src/shared/hotKey.ts not found
+  error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
+  ```
+- 2.自定义组件时使用 `import.meta` 报错，或使用其它方法定义 dirname ——已解决（√）
