@@ -230,8 +230,9 @@ html, body, #app, .theme-container, .page {
     }
 
     .footer {
-      padding-top: 14px;
-      padding-bottom: 14px;
+      padding-top: 0.9rem;
+      padding-bottom: 0.9rem;
+      font-size: 0.88rem;
     }
 
     #main-title {
@@ -301,7 +302,7 @@ html, body, #app, .theme-container, .page {
     }
 
     .badge {
-      font-size: 12px;
+      font-size: 0.74rem;
     }
 
     .page-nav .inner {
@@ -363,5 +364,29 @@ html, body, #app, .theme-container, .page {
       margin: 0;
       padding: 4px 0;
     }
+  }
+
+  /* markdown code */
+  div[class*=language-]::before {
+    top: 0.4em;
+  }
+
+  /* vuepress-plugin-copy-code2 */
+  div[class*=language-] > button.copy-code-button:not(.fancy).copied::after {
+    font-size: 0.88rem;
+    color: #fafafa;
+  }
+
+  div[class*=language-] > button.copy-code-button:not(.fancy) {
+    top: inherit;
+    bottom: 0.8em;;
+    background: transparent !important;
+  }
+
+  div[class*=language-] > button.copy-code-button:not(.fancy) .copy-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0 auto;
+    font-size: 1.4rem;
   }
 }

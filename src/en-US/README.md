@@ -79,6 +79,11 @@ npx vuepress build
   </CodeGroupItem>
 </CodeGroup>
 
+### Plugins (supplementary)
+
+- 1.[markdown copy](https://plugin-copy-code2.vuejs.press/zh/), Supports one click copy function;
+- 2.[markdown enhance](https://plugin-md-enhance.vuejs.press/zh/), Support functions such as code block grouping, task list, flowchart, slides, etc;
+
 ### Problem Record
 
 - 1.Some plugins or files are missing under @vuePress in node_modules, resulting in failure when importing some files—— Unresolved（ ×）
@@ -87,21 +92,33 @@ npx vuepress build
   error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
   error Import file @vuepress/theme-default/src/client/styles/vars-dark.scss not found
   error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
-  error Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-medium-zoom/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-nprogress/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-search/src/shared/hotKey.ts not found
   error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
   error Import file @vuepress/theme-default/src/client/styles/_variables.scss not found
   error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
   error Import file @vuepress/theme-default/src/client/styles/vars-dark.scss not found
-  error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
-  ⠙ Initializing and preparing dataerror Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-medium-zoom/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-nprogress/src/client/styles/vars.css not found
-  error Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-search/src/shared/hotKey.ts not found
   error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
+  ⠹ Initializing and preparing dataerror Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
+  ```
+  ```shell
+  yarn add -D @vuepress/theme-default@next
+  yarn add -D @vuepress/plugin-back-to-top@next
+  yarn add -D @vuepress/plugin-medium-zoom@next
+  yarn add -D @vuepress/plugin-external-link-icon@next
+  yarn add -D @vuepress/plugin-search@next
+  yarn add -D @vuepress/plugin-nprogress@next
   ```
 - 2.When customizing components, use 'import. meta' to report errors, or use other methods to define dirname - resolved (√)
+  ```shell
+  yarn add -D @vuepress/plugin-register-components
+  yarn add path
+  ```

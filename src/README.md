@@ -1,5 +1,6 @@
 ---
 home: true
+title: 首页
 heroImage: '/logo.svg'
 heroText: Vue 驱动的静态网站生成器
 tagline: 这是一个仿照 VuePress 官网（v2.0.0-beta.67）的演示网站，默认中文语言
@@ -78,6 +79,11 @@ npx vuepress build
   </CodeGroupItem>
 </CodeGroup>
 
+### 插件（补充）
+
+- 1.[markdown 复制](https://plugin-copy-code2.vuejs.press/zh/)，支持一键复制功能；
+- 2.[markdown 增强](https://plugin-md-enhance.vuejs.press/zh/)，支持代码块分组、任务列表、流程图、幻灯片等功能；
+
 ### 问题记录
 
 - 1.node_modules 中 @vuepress 下缺少部分插件或文件，导致引入一些文件时失败。——未解决（×）
@@ -86,21 +92,33 @@ npx vuepress build
   error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
   error Import file @vuepress/theme-default/src/client/styles/vars-dark.scss not found
   error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
-  error Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-medium-zoom/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-nprogress/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-search/src/shared/hotKey.ts not found
   error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
   error Import file @vuepress/theme-default/src/client/styles/_variables.scss not found
   error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
   error Import file @vuepress/theme-default/src/client/styles/vars-dark.scss not found
-  error Import file @vuepress/plugin-back-to-top/src/client/styles/vars.css not found
-  ⠙ Initializing and preparing dataerror Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
+  error Import file @vuepress/plugin-external-link-icon/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-medium-zoom/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-nprogress/src/client/styles/vars.css not found
-  error Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
   error Import file @vuepress/plugin-search/src/shared/hotKey.ts not found
   error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
+  ⠹ Initializing and preparing dataerror Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
+  ```
+  ```shell
+  yarn add -D @vuepress/theme-default@next
+  yarn add -D @vuepress/plugin-back-to-top@next
+  yarn add -D @vuepress/plugin-medium-zoom@next
+  yarn add -D @vuepress/plugin-external-link-icon@next
+  yarn add -D @vuepress/plugin-search@next
+  yarn add -D @vuepress/plugin-nprogress@next
   ```
 - 2.自定义组件时使用 `import.meta` 报错，或使用其它方法定义 dirname ——已解决（√）
+  ```shell
+  yarn add -D @vuepress/plugin-register-components
+  yarn add path
+  ```

@@ -1,6 +1,7 @@
 import {defineUserConfig, defaultTheme} from 'vuepress';
 import {registerComponentsPlugin} from '@vuepress/plugin-register-components';
 import {resolve} from 'path';
+import {copyCodePlugin} from "vuepress-plugin-copy-code2";
 // 引入配置
 import {navbarZh, navbarEn,} from './config/navbar/index';
 import {sidebarZh, sidebarEn,} from './config/sidebar/index';
@@ -128,5 +129,17 @@ export default defineUserConfig({
                 NpmBadge: resolve(__dirname, './components/NpmBadge.vue'),
             },
         }),
+        copyCodePlugin({
+            locales: {
+                "/": {
+                    copy: "复制此段代码",
+                },
+
+                "/en-US/": {
+                    copy: "Copy this code segment",
+                },
+            },
+        }),
+        // ["md-enhance", {codegroup: true}],
     ],
 });
