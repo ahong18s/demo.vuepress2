@@ -4,7 +4,7 @@ import {navbarZh, navbarEn,} from './config/navbar/index';
 import {sidebarZh, sidebarEn,} from './config/sidebar/index';
 
 export default defineUserConfig({
-    base: '/',
+    base: '/demo.vuepress2/',
     title: '',
     description: '',
     lang: 'zh-CN',

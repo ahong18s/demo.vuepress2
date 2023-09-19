@@ -1,1 +1,0 @@
-const a=JSON.parse('{"key":"v-92287ea6","path":"/en-US/advanced/cookbook/markdown-and-vue-sfc.html","title":"Markdown and Vue SFC","lang":"en-US","frontmatter":{},"headers":[],"git":{"updatedTime":null,"contributors":[]},"filePathRelative":"en-US/advanced/cookbook/markdown-and-vue-sfc.md"}');export{a as data};
