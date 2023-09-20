@@ -2,6 +2,7 @@ import {defineUserConfig, defaultTheme} from 'vuepress';
 import {registerComponentsPlugin} from '@vuepress/plugin-register-components';
 import {resolve} from 'path';
 import {copyCodePlugin} from "vuepress-plugin-copy-code2";
+import {docsearchPlugin} from '@vuepress/plugin-docsearch'
 // 引入配置
 import {navbarZh, navbarEn,} from './config/navbar/index';
 import {sidebarZh, sidebarEn,} from './config/sidebar/index';
@@ -141,5 +142,97 @@ export default defineUserConfig({
             },
         }),
         // ["md-enhance", {codegroup: true}],
+        docsearchPlugin({
+            appId: 'H2L64TMNCG',
+            apiKey: '8040d295e19df9e61c15625bbd7e11f9',
+            indexName: 'demo-vuepress2',
+            searchParameters: {
+                facetFilters: ['tags:v2'],
+            },
+            locales: {
+                '/': {
+                    placeholder: '搜索文档',
+                    translations: {
+                        button: {
+                            buttonText: '搜索文档',
+                            buttonAriaLabel: '搜索文档',
+                        },
+                        modal: {
+                            searchBox: {
+                                resetButtonTitle: '清除查询条件',
+                                resetButtonAriaLabel: '清除查询条件',
+                                cancelButtonText: '取消',
+                                cancelButtonAriaLabel: '取消',
+                            },
+                            startScreen: {
+                                recentSearchesTitle: '搜索历史',
+                                noRecentSearchesText: '没有搜索历史',
+                                saveRecentSearchButtonTitle: '保存至搜索历史',
+                                removeRecentSearchButtonTitle: '从搜索历史中移除',
+                                favoriteSearchesTitle: '收藏',
+                                removeFavoriteSearchButtonTitle: '从收藏中移除',
+                            },
+                            errorScreen: {
+                                titleText: '无法获取结果',
+                                helpText: '你可能需要检查你的网络连接',
+                            },
+                            footer: {
+                                selectText: '选择',
+                                navigateText: '切换',
+                                closeText: '关闭',
+                                searchByText: '搜索提供者',
+                            },
+                            noResultsScreen: {
+                                noResultsText: '无法找到相关结果',
+                                suggestedQueryText: '你可以尝试查询',
+                                reportMissingResultsText: '你认为该查询应该有结果？',
+                                reportMissingResultsLinkText: '点击反馈',
+                            },
+                        },
+                    },
+                },
+                '/en-US/': {
+                    placeholder: 'search',
+                    translations: {
+                        button: {
+                            buttonText: 'search',
+                            buttonAriaLabel: 'search',
+                        },
+                        modal: {
+                            searchBox: {
+                                resetButtonTitle: 'clear',
+                                resetButtonAriaLabel: 'clear',
+                                cancelButtonText: 'cancel',
+                                cancelButtonAriaLabel: 'cancel',
+                            },
+                            startScreen: {
+                                recentSearchesTitle: 'Search History',
+                                noRecentSearchesText: 'No search history',
+                                saveRecentSearchButtonTitle: 'Save to Search History',
+                                removeRecentSearchButtonTitle: 'Remove from search history',
+                                favoriteSearchesTitle: 'collect',
+                                removeFavoriteSearchButtonTitle: 'Remove from Collection',
+                            },
+                            errorScreen: {
+                                titleText: 'Unable to obtain results',
+                                helpText: 'You may need to check your network connection',
+                            },
+                            footer: {
+                                selectText: 'select',
+                                navigateText: 'switch',
+                                closeText: 'close',
+                                searchByText: 'Search Provider',
+                            },
+                            noResultsScreen: {
+                                noResultsText: 'Unable to find relevant results',
+                                suggestedQueryText: 'You can try to query',
+                                reportMissingResultsText: 'Do you think the query should have results?',
+                                reportMissingResultsLinkText: 'Click on feedback',
+                            },
+                        },
+                    },
+                },
+            },
+        }),
     ],
 });
