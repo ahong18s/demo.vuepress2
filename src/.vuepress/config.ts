@@ -7,6 +7,8 @@ import {docsearchPlugin} from '@vuepress/plugin-docsearch'
 import {navbarZh, navbarEn,} from './config/navbar/index';
 import {sidebarZh, sidebarEn,} from './config/sidebar/index';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 export default defineUserConfig({
     base: '/demo.vuepress2/',
     title: '',
@@ -47,8 +49,8 @@ export default defineUserConfig({
         docsDir: 'docs',
         logo: '/logo.png',
         // logoDark: '',
-        repo: 'https://gitee.com/ahong18s/demo.vuepress2',
-        // repoLabel: '',
+        repo: 'https://github.com/ahong18s/demo.vuepress2',
+        repoLabel: 'GitHub',
         locales: {
             '/': {
                 colorMode: 'auto',
@@ -58,6 +60,7 @@ export default defineUserConfig({
                 editLinkText: '在 GitHub 上编辑此页',//编辑链接文字
                 // editLinkPattern:'',
                 navbar: navbarZh,
+                // repoLabel: '',
                 // 多语言下拉菜单的标题
                 selectLanguageAriaLabel: '选择语言',
                 selectLanguageName: '简体中文',
@@ -93,7 +96,6 @@ export default defineUserConfig({
                 editLinkText: 'Edit this page on GitHub',
                 // editLinkPattern:'',
                 navbar: navbarEn,
-                repo: 'https://gitee.com/ahong18s/demo.vuepress2',
                 // repoLabel: '',
                 // Configuration of Service Worker
                 selectLanguageAriaLabel: 'Languages',
@@ -122,6 +124,12 @@ export default defineUserConfig({
                 toggleColorMode: 'Switch color mode',
                 toggleSidebar: 'Switch Sidebar',
             },
+        },
+        themePlugins: {
+            // only enable git plugin in production mode
+            git: isProd,
+            // use shiki plugin in production mode instead
+            prismjs: !isProd,
         },
     }),
     plugins: [
@@ -178,8 +186,12 @@ export default defineUserConfig({
                             },
                             footer: {
                                 selectText: '选择',
+                                selectKeyAriaLabel: '输入键',
                                 navigateText: '切换',
+                                navigateUpKeyAriaLabel: '上箭头',
+                                navigateDownKeyAriaLabel: '下箭头',
                                 closeText: '关闭',
+                                closeKeyAriaLabel: '退出键',
                                 searchByText: '搜索提供者',
                             },
                             noResultsScreen: {
@@ -192,42 +204,46 @@ export default defineUserConfig({
                     },
                 },
                 '/en-US/': {
-                    placeholder: 'search',
+                    placeholder: 'Search docs',
                     translations: {
                         button: {
-                            buttonText: 'search',
-                            buttonAriaLabel: 'search',
+                            buttonText: 'Search',
+                            buttonAriaLabel: 'Search',
                         },
                         modal: {
                             searchBox: {
-                                resetButtonTitle: 'clear',
-                                resetButtonAriaLabel: 'clear',
-                                cancelButtonText: 'cancel',
-                                cancelButtonAriaLabel: 'cancel',
+                                resetButtonTitle: 'Clear the query',
+                                resetButtonAriaLabel: 'Clear the query',
+                                cancelButtonText: 'Cancel',
+                                cancelButtonAriaLabel: 'Cancel',
                             },
                             startScreen: {
-                                recentSearchesTitle: 'Search History',
-                                noRecentSearchesText: 'No search history',
-                                saveRecentSearchButtonTitle: 'Save to Search History',
-                                removeRecentSearchButtonTitle: 'Remove from search history',
-                                favoriteSearchesTitle: 'collect',
-                                removeFavoriteSearchButtonTitle: 'Remove from Collection',
+                                recentSearchesTitle: 'Recent',
+                                noRecentSearchesText: 'No recent searches',
+                                saveRecentSearchButtonTitle: 'Save this search',
+                                removeRecentSearchButtonTitle: 'Remove this search from history',
+                                favoriteSearchesTitle: 'Favorite',
+                                removeFavoriteSearchButtonTitle: 'Remove this search from favorites',
                             },
                             errorScreen: {
-                                titleText: 'Unable to obtain results',
-                                helpText: 'You may need to check your network connection',
+                                titleText: 'Unable to fetch results',
+                                helpText: 'You might want to check your network connection.',
                             },
                             footer: {
-                                selectText: 'select',
-                                navigateText: 'switch',
-                                closeText: 'close',
-                                searchByText: 'Search Provider',
+                                selectText: 'to select',
+                                selectKeyAriaLabel: 'Enter key',
+                                navigateText: 'to navigate',
+                                navigateUpKeyAriaLabel: 'Arrow up',
+                                navigateDownKeyAriaLabel: 'Arrow down',
+                                closeText: 'to close',
+                                closeKeyAriaLabel: 'Escape key',
+                                searchByText: 'Search by',
                             },
                             noResultsScreen: {
-                                noResultsText: 'Unable to find relevant results',
-                                suggestedQueryText: 'You can try to query',
-                                reportMissingResultsText: 'Do you think the query should have results?',
-                                reportMissingResultsLinkText: 'Click on feedback',
+                                noResultsText: 'No results for',
+                                suggestedQueryText: 'Try searching for',
+                                reportMissingResultsText: 'Believe this query should return results?',
+                                reportMissingResultsLinkText: 'Let us know.',
                             },
                         },
                     },
