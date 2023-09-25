@@ -8,9 +8,10 @@ import {navbarZh, navbarEn,} from './config/navbar/index';
 import {sidebarZh, sidebarEn,} from './config/sidebar/index';
 
 const isProd = process.env.NODE_ENV === 'production';
+const base = '/demo.vuepress2/';
 
 export default defineUserConfig({
-    base: '/demo.vuepress2/',
+    base: base,
     title: '',
     description: '',
     lang: 'zh-CN',
@@ -152,8 +153,9 @@ export default defineUserConfig({
         // ["md-enhance", {codegroup: true}],
         docsearchPlugin({
             appId: 'H2L64TMNCG',
-            apiKey: '8040d295e19df9e61c15625bbd7e11f9',
+            apiKey: 'e01bf3b3d84f22621aff4e1de2adbe85',
             indexName: 'demo-vuepress2',
+            // indexBase: base,
             searchParameters: {
                 facetFilters: ['tags:v2'],
             },
