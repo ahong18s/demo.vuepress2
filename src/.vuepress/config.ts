@@ -2,7 +2,8 @@ import {defineUserConfig, defaultTheme} from 'vuepress';
 import {registerComponentsPlugin} from '@vuepress/plugin-register-components';
 import {resolve} from 'path';
 import {copyCodePlugin} from "vuepress-plugin-copy-code2";
-import {docsearchPlugin} from '@vuepress/plugin-docsearch'
+import {docsearchPlugin} from '@vuepress/plugin-docsearch';
+import { shikiPlugin } from '@vuepress/plugin-shiki';
 // 引入配置
 import {navbarZh, navbarEn,} from './config/navbar/index';
 import {sidebarZh, sidebarEn,} from './config/sidebar/index';
@@ -133,6 +134,16 @@ export default defineUserConfig({
             prismjs: !isProd,
         },
     }),
+    // 语法配置
+    markdown: {
+        importCode: {
+            handleImportPath: (str) =>
+                str.replace(/^@vuepress/, resolve(__dirname, '../../ecosystem')),
+        },
+        code: {
+            highlightLines: true
+        }
+    },
     plugins: [
         registerComponentsPlugin({
             components: {
@@ -150,6 +161,7 @@ export default defineUserConfig({
                 },
             },
         }),
+        isProd ? shikiPlugin({ theme: 'dark-plus' }) : [],
         // ["md-enhance", {codegroup: true}],
         docsearchPlugin({
             appId: 'H2L64TMNCG',

@@ -86,7 +86,7 @@ npx vuepress build
 
 ### Problem Record
 
-- 1.Some plugins or files are missing under @vuePress in node_modules, resulting in failure when importing some files—— Unresolved（ ×）
+- 1.Some plugins or files are missing under @vuePress in node_modules, resulting in failure when importing some files—— resolved (√)
   ```shell
   ⠙ Initializing and preparing dataerror Import file @vuepress/theme-default/src/client/styles/_variables.scss not found
   error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
@@ -109,13 +109,10 @@ npx vuepress build
   error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
   ⠹ Initializing and preparing dataerror Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
   ```
-  ```shell
-  yarn add -D @vuepress/theme-default@next
-  yarn add -D @vuepress/plugin-back-to-top@next
-  yarn add -D @vuepress/plugin-medium-zoom@next
-  yarn add -D @vuepress/plugin-external-link-icon@next
-  yarn add -D @vuepress/plugin-search@next
-  yarn add -D @vuepress/plugin-nprogress@next
+  ```text
+  resolution process:
+  1. Import the ecosystem directory to the project;
+  2. vuepress/config.js, add content：markdown->importCode.
   ```
 - 2.When customizing components, use 'import. meta' to report errors, or use other methods to define dirname - resolved (√)
   ```shell

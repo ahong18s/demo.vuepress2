@@ -86,7 +86,7 @@ npx vuepress build
 
 ### 问题记录
 
-- 1.node_modules 中 @vuepress 下缺少部分插件或文件，导致引入一些文件时失败。——未解决（×）
+- 1.node_modules 中 @vuepress 下缺少部分插件或文件，导致引入一些文件时失败。——已解决（√）
   ```shell
   ⠙ Initializing and preparing dataerror Import file @vuepress/theme-default/src/client/styles/_variables.scss not found
   error Import file @vuepress/theme-default/src/client/styles/vars.scss not found
@@ -109,13 +109,10 @@ npx vuepress build
   error Import file @vuepress/plugin-search/src/client/styles/vars.css not found
   ⠹ Initializing and preparing dataerror Import file @vuepress/plugin-pwa-popup/src/client/styles/vars.css not found
   ```
-  ```shell
-  yarn add -D @vuepress/theme-default@next
-  yarn add -D @vuepress/plugin-back-to-top@next
-  yarn add -D @vuepress/plugin-medium-zoom@next
-  yarn add -D @vuepress/plugin-external-link-icon@next
-  yarn add -D @vuepress/plugin-search@next
-  yarn add -D @vuepress/plugin-nprogress@next
+  ```text
+  解决过程：
+  1. 引入 ecosystem 目录到项目下；
+  2. vuepress/config.js，添加内容：markdown->importCode。
   ```
 - 2.自定义组件时使用 `import.meta` 报错，或使用其它方法定义 dirname ——已解决（√）
   ```shell
