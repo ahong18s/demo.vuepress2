@@ -2,7 +2,6 @@ yarn.lock
 package-lock.json
 .temp/
 .idea/
-docs
 
 # Logs
 logs
