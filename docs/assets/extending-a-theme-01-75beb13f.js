@@ -1,1 +1,0 @@
-const e="/demo.vuepress2/images/cookbook/extending-a-theme-01.png";export{e as _};
