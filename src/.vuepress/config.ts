@@ -9,7 +9,7 @@ import {navbarZh, navbarEn,} from './config/navbar/index';
 import {sidebarZh, sidebarEn,} from './config/sidebar/index';
 
 const isProd = process.env.NODE_ENV === 'production';
-const base = '/demo.vuepress2/';
+const base = '/';
 
 export default defineUserConfig({
     base: base,
